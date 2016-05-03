@@ -1,0 +1,7 @@
+__init__.py
+__pycache__
+*.idea
+*config.gf
+*config.ocr
+*vericode*
+*log*

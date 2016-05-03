@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>广发证券秘钥生成器</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#generate").click(
+                    function () {
+                        var pass = $("object")[0].GetPassword()
+                        var account = $("object")[0].EncodeData($("#account").val())
+                        var wsh = new ActiveXObject('WScript.Shell');
+                        if (wsh) {
+//						alert(account + account)
+//						wsh.run("python C:\\Users\\changye\\PyProjects\\HTSocket\\GFConfigMaker.py " + account + " " + pass )
+                            $(".panel").removeClass('panel-danger').addClass('panel-success')
+                            $("#result_title").text('请将下面的秘钥复制并保存为config.gf文件')
+
+                            $("#result").text('{"account":"' + account + '","password":"' + pass + '"}')
+
+                        } else {
+                            alert("请在IE浏览器中运行.")
+                        }
+
+                    }
+            )
+        })
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="well bs-component">
+            <fieldset>
+                <legend>广发证券秘钥生成器</legend>
+                <div class="form-group">
+                    <label class="control-label" for="account">广发证券账号</label>
+                    <input class="form-control" id="account" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="SecurePassword">密码</label>
+                    <object width="190" height="40" id="SecurePassword"
+                            classid="CLSID:64B153E8-7C79-43e2-B7B8-C571E18FE027"
+                            codebase="update.CAB">
+                        <PARAM NAME="_cx" VALUE="5000">
+                        <PARAM NAME="_cy" VALUE="700">
+                        <PARAM NAME="BackColor" VALUE="16777215">
+                        <PARAM NAME="Width" VALUE="0">
+                        <PARAM NAME="Height" VALUE="0">
+                        <PARAM NAME="PasswordMaxLen" VALUE="16">
+                        <PARAM NAME="BorderColor" VALUE="0">
+                        <PARAM NAME="EditStyle" VALUE="">
+                        <PARAM NAME="ProtectColor" VALUE="">
+                        <PARAM NAME="UnProtectColor" VALUE="">
+                        <PARAM NAME="EditBkgColor" VALUE="">
+                        <PARAM NAME="SetProtectType" VALUE="0">
+                        <param name="Width" value="5000">
+                        <param name="EditStyle" value="Convex">
+                        <param name="PasswordMaxLen" value="16">
+                        <param name="ProtectColor" value="#FFFFFF">
+                        <param name="UnProtectColor" value="#FFFFFF">
+                        <param name="EditBkgColor" value="#ffffff">
+                    </object>
+                </div>
+
+                <div class="col-lg-5 col-lg-offset-7">
+                    <button class="btn btn-primary" id="generate">生成秘钥</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="result_title">秘钥未生成</h3>
+                </div>
+                <div class="panel-body">
+                    <textarea class="form-control" rows="10" id="result">
+                    秘钥未生成
+                    </textarea>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+<!-- /.container -->
+
+
+</body>
+</html>
+
+
+
