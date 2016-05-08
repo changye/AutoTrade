@@ -51,3 +51,5 @@ AutoTrade 的运行分为三个大的阶段
 上面的三个阶段第1和第2均阶段在交易系统启动时执行一遍, 第三个阶段会反复执行, 直到发生错误或满足用户定义的退出条件.
 
 ![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/start.jpg)
+
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/run.jpg)
