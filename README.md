@@ -65,6 +65,18 @@ AutoTrade 的运行分为三个大的阶段
 因此, 我们需要先生成加密后的秘钥对, 然后再使用这组密钥对登录广发证券的web接口. 生成密钥对利用了广发证券页面交易系统的web控件, 我们可以利用这个控件, 将密钥对生成并保存为配置文件, 这样AutoTrade框架就可以直接调用这个配置文件自动登录广发证券的web交易接口了.<br>
 
 请按照下面的步骤获取交易密钥对:
+1. 使用IE登录http://trade.gf.com.cn页面, 确保密码控件正确显示. (如果不显示,请按照提示安装控件)
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/控件准备.png)
+2. 使用IE 打开Tools目录下的本地文件: "广发证券秘钥生成.html"
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/秘钥生成1.png)
+3. 允许本地运行activex, 使控件可以在页面上正常显示
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/秘钥生成2.png)
+4. 填写广发证券账号和密码, 点击生成秘钥. 注意, IE可能需要你允许ActiveX交互, 点击是,允许交互
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/秘钥生成3.png)
+5. 生成秘钥后存储成文件, 建议不要使用windows自带的notepad, 使用sublime或者其他专业编辑文件, 并保存为utf8格式
+![image](https://github.com/changye/AutoTrade/raw/master/Documents/image/秘钥生成4.png)
+6. 将准备好的Socket.config.gf文件拷贝到AutoTrade的Configs目录下
+至此, 广发证券的秘钥配置文件就准备好了
 
 
 ## 2.3 ruokuai账号申请
