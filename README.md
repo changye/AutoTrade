@@ -80,5 +80,8 @@ AutoTrade 的运行分为三个大的阶段
 
 
 ## 2.3 ruokuai账号申请
+1. 注册用户账号并充值(充一块钱足够了)<br>
+2. 将账号和密码填写到Configs目录下Tools.config.ocr.example文件中, 并将文件名修改为:Tools.config.ocr <br>
+至此, 验证码识别配置文件就准备好了.
 
 
